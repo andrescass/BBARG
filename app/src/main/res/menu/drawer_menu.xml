@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_draw_novedades"
+            android:title="@string/menu_draw_news"
+            />
+        <item
+            android:id="@+id/menu_draw_pjs"
+            android:title="@string/menu_draw_pj"
+            />
+        <item
+            android:id="@+id/menu_draw_events"
+            android:title="@string/menu_draw_events"
+            />
+        <item
+            android:id="@+id/menu_draw_lore"
+            android:title="@string/menu_draw_lore"/>
+        <item
+            android:id="@+id/menu_draw_web"
+            android:title="@string/menu_draw_web"
+            />
+        <item
+            android:id="@+id/menu_draw_fb"
+            android:title="@string/menu_draw_fb"
+            />
+        <item
+            android:id="@+id/menu_draw_staff"
+            android:title="@string/menu_draw_staff"
+            />
+    </group>
 
 </menu>

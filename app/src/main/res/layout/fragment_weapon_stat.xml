@@ -1,14 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     tools:context=".Fragments.WeaponStatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Spinner
+        android:id="@+id/wpn_stat_up"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_blood_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/wpn_stat_up"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_blood_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blood_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_blood_up"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_phys_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toStartOf="@+id/wpn_stat_lyt_blood_up"
+        android:layout_below="@id/wpn_stat_up"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_phys_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phys_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_phys_up"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_ark_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@id/wpn_stat_lyt_blood_up"
+        android:layout_below="@+id/wpn_stat_up"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_ark_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arc_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_ark_up"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_fir_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/wpn_stat_lyt_blood_up"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_fir_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fire_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_fir_up"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_bolt_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bolt_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_bolt_up"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <!--****************************************-->
+    <!--              LOWER HALF                -->
+    <!--****************************************-->
+
+    <Spinner
+        android:id="@+id/wpn_stat_down"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/wpn_stat_lyt_fir_up"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_blood_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/wpn_stat_down"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_blood_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blood_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_blood_down"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_phys_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toStartOf="@+id/wpn_stat_lyt_blood_down"
+        android:layout_below="@id/wpn_stat_down"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_phys_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/phys_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_phys_down"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_ark_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@id/wpn_stat_lyt_blood_down"
+        android:layout_below="@+id/wpn_stat_down"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_ark_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/blood_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_ark_down"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wpn_stat_lyt_fir_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/wpn_stat_lyt_blood_down"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_fir_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fire_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_fir_down"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+        <ImageView
+            android:id="@+id/wpn_stat_ico_bolt_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bolt_atk"
+            android:layout_gravity="center_vertical"
+            />
+
+        <EditText
+            android:id="@+id/wpn_stat_txt_bolt_down"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/secondaryTextColor"
+            android:layout_margin="5dp"
+            android:layout_gravity="center_vertical"
+            android:inputType="none"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

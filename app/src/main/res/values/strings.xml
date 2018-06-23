@@ -1,3 +1,63 @@
 <resources>
-    <string name="app_name">BBARG</string>
+    <string name="app_name">Bloodborne Argentina</string>
+
+    <!-- Drawer menu titles -->
+    <string name="menu_draw_news">Novedades</string>
+    <string name="menu_draw_pj">Personajes</string>
+    <string name="menu_draw_events">Eventos</string>
+    <string name="menu_draw_web">Página Web</string>
+    <string name="menu_draw_fb">Facebook</string>
+    <string name="menu_draw_staff">Staff de BBARG</string>
+    <string name="menu_draw_lore">Lore</string>
+
+    <!-- Character type strings -->
+    <string-array name="char_type_strings">
+        <item>Milquetoast</item>
+        <item>Lone Survivor</item>
+        <item>Troubled Childhood</item>
+        <item>Violent Past</item>
+        <item>Professional</item>
+        <item>Military Veteran</item>
+        <item>Noble Scion</item>
+        <item>Cruel Fait</item>
+        <item>Waste of Skin</item>
+    </string-array>
+
+    <!-- Character gender -->
+    <string-array name="char_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <!-- Left Hand Weapon List -->
+    <string-array name="left_hand_weapons">
+        <item>Bare Fists</item>
+        <item>Cannon</item>
+        <item>Evelyn</item>
+        <item>Fist of gratia</item>
+        <item>Flamesprayer</item>
+        <item>Gatlin Gun</item>
+        <item>Hunter Blunderbuss</item>
+        <item>Hunter Pistol</item>
+        <item>Hunter's Torch</item>
+        <item>Loch Shield</item>
+    </string-array>
+
+    <!-- Right Hand Weapon List -->
+    <string-array name="right_hand_weapons">
+        <item>Bare Fists</item>
+        <item>Amygdala Arm</item>
+        <item>Beast Cutter</item>
+        <item>Beasthunter Saif</item>
+        <item>Blade of Mercy</item>
+        <item>Bloodletter</item>
+        <item>Boom Hammer</item>
+        <item>Burial Blade</item>
+        <item>Chikage</item>
+        <item>Church Pick</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+

@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bbarg.bloodborneargentina.bbarg">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".App.BbargApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_bbarg"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_bbarg_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".Activities.BBARG">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.loreItemActivity"></activity>
     </application>
 
 </manifest>

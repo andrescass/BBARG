@@ -1,6 +1,7 @@
 package com.bbarg.bloodborneargentina.bbarg.Activities;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -9,11 +10,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.bbarg.bloodborneargentina.bbarg.App.BbargApp;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.CardFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.PJFragment;
+import com.bbarg.bloodborneargentina.bbarg.Fragments.RankingFragment;
+import com.bbarg.bloodborneargentina.bbarg.Fragments.WebPageFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.basicStatFragment;
 import com.bbarg.bloodborneargentina.bbarg.R;
 
@@ -37,6 +42,15 @@ public class BBARG extends AppCompatActivity {
 
         SetToolBar();
 
+        //** Set general Height and Width
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        BbargApp.finalWidth = size.x;
+        BbargApp.finalHeight = BbargApp.finalWidth/2;
+        BbargApp.totalWidth = size.x;
+        BbargApp.totalHeight = size.y;
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -44,12 +58,20 @@ public class BBARG extends AppCompatActivity {
                 Fragment fragment = null;
 
                 switch(item.getItemId()){
-                    case R.id.menu_draw_pjs:
+                    /*case R.id.menu_draw_pjs:
                         fragment = new PJFragment();
+                        fragmentTransaction = true;
+                        break;*/
+                    case R.id.menu_draw_ranking:
+                        fragment = new RankingFragment();
                         fragmentTransaction = true;
                         break;
                     case R.id.menu_draw_lore:
                         fragment = new CardFragment();
+                        fragmentTransaction = true;
+                        break;
+                    case R.id.menu_draw_web:
+                        fragment = new WebPageFragment();
                         fragmentTransaction = true;
                         break;
                 }

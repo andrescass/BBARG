@@ -5,10 +5,10 @@
             android:id="@+id/menu_draw_novedades"
             android:title="@string/menu_draw_news"
             />
-        <item
+        <!--item
             android:id="@+id/menu_draw_pjs"
             android:title="@string/menu_draw_pj"
-            />
+            /-->
         <item
             android:id="@+id/menu_draw_events"
             android:title="@string/menu_draw_events"
@@ -16,6 +16,9 @@
         <item
             android:id="@+id/menu_draw_lore"
             android:title="@string/menu_draw_lore"/>
+        <item
+            android:id="@+id/menu_draw_ranking"
+            android:title="Ranking"/>
         <item
             android:id="@+id/menu_draw_web"
             android:title="@string/menu_draw_web"

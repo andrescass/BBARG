@@ -23,6 +23,8 @@ import com.bbarg.bloodborneargentina.bbarg.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -52,6 +54,8 @@ public class CardFragment extends Fragment {
 
         lores.add(lore1);
         lores.add(lore2);
+
+
 
         loreRec = view.findViewById(R.id.card_frag_rec);
         LoreRecyclerAdapter loreRecAd = new LoreRecyclerAdapter(lores, R.layout.lore_item_layout, new LoreRecyclerAdapter.OnItemClickListener() {

@@ -14,15 +14,29 @@ import android.view.Display;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.bbarg.bloodborneargentina.bbarg.Adapters.NullOnEMptyConverterFactory;
 import com.bbarg.bloodborneargentina.bbarg.App.BbargApp;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.CardFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.PJFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.RankingFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.WebPageFragment;
 import com.bbarg.bloodborneargentina.bbarg.Fragments.basicStatFragment;
+import com.bbarg.bloodborneargentina.bbarg.Interfaces.ServerService;
+import com.bbarg.bloodborneargentina.bbarg.Models.LoreModel;
 import com.bbarg.bloodborneargentina.bbarg.R;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class BBARG extends AppCompatActivity {
+
+    // Server connection
+    ServerService serverConn;
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -41,6 +55,33 @@ public class BBARG extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
 
         SetToolBar();
+
+        //** Connection to server
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://bbargapp.pythonanywhere.com/apis/")
+                .addConverterFactory(new NullOnEMptyConverterFactory())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        serverConn = retrofit.create(ServerService.class);
+
+        Call<List<LoreModel>> loreServ = serverConn.getLores();
+        loreServ.enqueue(new Callback<List<LoreModel>>() {
+            @Override
+            public void onResponse(Call<List<LoreModel>> call, Response<List<LoreModel>> response) {
+                List<LoreModel> loreS = response.body();
+                if(loreS.size() > 0)
+                {
+                    Toast.makeText(BBARG.this, "OK", Toast.LENGTH_LONG);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<LoreModel>> call, Throwable t) {
+                Toast.makeText(BBARG.this, "FAIL", Toast.LENGTH_LONG);
+            }
+        });
 
         //** Set general Height and Width
         Display display = getWindowManager().getDefaultDisplay();
